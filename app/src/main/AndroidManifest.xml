@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.abc.qwert.thescience">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:windowSoftInputMode="stateVisible|adjustResize"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+
+        <activity
+            android:name=".ParameterActivity"
+            android:label="@string/title_activity_parameter"
+            android:parentActivityName=".MainActivitySelectScience"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/ParamStyle">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.abc.qwert.thescience.MainActivitySelectScience" />
+        </activity>
+
+        <activity
+            android:name=".FunctionCalculatorActivity"
+            android:label="@string/title_activity_function_calculator"
+            android:parentActivityName=".MainActivitySelectScience"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/CalcStyle">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.abc.qwert.thescience.MainActivitySelectScience" />
+        </activity>
+
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/SettingsStyle" />
+
+        <activity
+            android:name=".MainActivitySelectScience"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+        </activity>
+
+        <activity
+            android:name=".PhysSelectActivity"
+            android:label="@string/title_activity_phys_select"
+            android:parentActivityName=".MainActivitySelectScience"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/PhysStyle">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.abc.qwert.thescience.MainActivitySelectScience" />
+        </activity>
+
+        <activity
+            android:name=".PhysTabActivity"
+            android:label="@string/title_activity_phys_tab"
+            android:parentActivityName=".PhysSelectActivity"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/PhysTab"
+            android:windowSoftInputMode="stateHidden|adjustPan">
+
+            <!-- android:windowSoftInputMode="stateHidden|adjustResize" -->
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.abc.qwert.thescience.PhysSelectActivity" />
+        </activity>
+
+        <activity
+            android:name=".ChemSelectActivity"
+            android:label="@string/title_activity_chem_select_layout"
+            android:parentActivityName=".MainActivitySelectScience"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.abc.qwert.thescience.MainActivitySelectScience" />
+        </activity>
+
+        <activity
+            android:name=".ITActivity"
+            android:label="@string/title_activity_it"
+            android:parentActivityName=".MainActivitySelectScience"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/ITStyle"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.abc.qwert.thescience.MainActivitySelectScience" />
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-7919601933189367~2155103515" />
+
+    </application>
+
+</manifest>

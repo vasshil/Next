@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "414143693402",
+    "firebase_url": "https://next-f7033.firebaseio.com",
+    "project_id": "next-f7033",
+    "storage_bucket": "next-f7033.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414143693402:android:38346196c812a70a",
+        "android_client_info": {
+          "package_name": "com.abc.qwert.thescience"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "414143693402-uvjk8d73v4r6rnsaq40jj3bf6o69t8no.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.abc.qwert.thescience",
+            "certificate_hash": "afae2fbd5a2fe31fa037ea4d6d90b1f822be8094"
+          }
+        },
+        {
+          "client_id": "414143693402-c1j0g7shngv22dh5m1vq59csndv49ieu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRi6vn2X11fk2yKOUdNCYrtUkW5RelqVs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "414143693402-c1j0g7shngv22dh5m1vq59csndv49ieu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

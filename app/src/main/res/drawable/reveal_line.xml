@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <solid
+        android:color="@color/keyBoardBackground"/>
+
+    <corners
+        android:bottomLeftRadius="4dp"
+        android:bottomRightRadius="4dp"/>
+
+    <size
+        android:height="4dp"/>
+
+    <gradient
+        android:startColor="#FF6CAB"
+        android:endColor="#7366FF"
+        android:angle="315"/>
+
+</shape>

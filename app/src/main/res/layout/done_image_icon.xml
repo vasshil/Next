@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView
+    android:id="@+id/done_image"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@android:style/Widget.ActionButton"
+    android:layout_width="24dp"
+    android:layout_height="24dp"
+    android:contentDescription="@string/it_apply_hint"
+    android:src="@drawable/ic_check_white_24dp" >
+</ImageView>

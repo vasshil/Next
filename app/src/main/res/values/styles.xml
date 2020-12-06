@@ -1,0 +1,228 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="MainToolbarTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:fontFamily">@font/product_sans_bold</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="Phys" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/physPrimary</item>
+        <item name="colorPrimaryDark">@color/physDarkPrimary</item>
+        <item name="colorAccent">@color/physAccent</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowSharedElementEnterTransition">@transition/shared_element_transition</item>
+        <item name="android:windowSharedElementExitTransition">@transition/shared_element_transition</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">true</item>
+    </style>
+
+    <style name="PhysStyle" parent="AppTheme.NoActionBar">
+        <item name="colorPrimary">@color/physPrimary</item>
+        <item name="colorPrimaryDark">@color/physDarkPrimary</item>
+        <item name="colorAccent">@color/physAccent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:navigationBarColor">@color/black</item>
+    </style>
+
+    <style name="PhysActionBar" parent="AppTheme.AppBarOverlay">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <style name="PhysTab" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+        <item name="colorAccent">@color/physTabAccent</item>
+        <item name="android:colorBackground">@color/white</item>
+        <item name="android:textColorPrimary">@color/primaryText</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowSharedElementEnterTransition">@transition/shared_element_transition</item>
+        <item name="android:windowSharedElementExitTransition">@transition/shared_element_transition</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <style name="PhysTabBar">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="ToolbarLayout">
+        <item name="android:fontFamily">@font/product_sans_bold</item>
+    </style>
+
+    <style name="Phys.NoActionBar">
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">false</item>
+    </style>
+
+    <style name="TransitionTheme" parent="AppTheme">
+        <item name="android:windowSharedElementEnterTransition">@transition/shared_element_transition</item>
+        <item name="android:background">@color/physPrimary</item>
+        <item name="android:windowBackground">@color/physPrimary</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+
+    <style name="Phys.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Phys.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="SearchViewTheme" parent="Widget.AppCompat.SearchView.ActionBar">
+        <item name="layout">@layout/toolbar_search_view</item>
+        <item name="commitIcon">@drawable/ic_search_commit</item>
+        <item name="colorControlNormal">@color/material_light_active_icon</item>
+        <item name="colorControlHighlight">@color/material_ripple_light</item>
+        <item name="autoCompleteTextViewStyle">@style/AutoCompleteTextViewStyle</item>
+        <item name="suggestionRowLayout">@layout/search_view_suggestion_row</item>
+        <item name="android:maxWidth">9999dp</item>
+        <item name="android:colorPrimaryDark">@color/quantum_grey_600</item>
+    </style>
+
+    <style name="AutoCompleteTextViewStyle" parent="Widget.AppCompat.Light.AutoCompleteTextView">
+        <item name="android:popupBackground">@drawable/search_suggestions_bg</item>
+        <item name="android:popupElevation">0dp</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="searchViewStyle">@style/SearchViewTheme</item>
+        <item name="colorControlNormal">@color/material_light_active_icon</item>
+        <item name="android:statusBarColor">@color/quantum_grey_600</item>
+        <item name="android:fontFamily">@font/product_sans_bold</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+
+    <style name="Calc" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/calcPrimary</item>
+        <item name="colorPrimaryDark">@color/calcDarkPrimary</item>
+        <item name="colorAccent">@color/calcAccent</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowSharedElementEnterTransition">@transition/shared_element_transition</item>
+        <item name="android:windowSharedElementExitTransition">@transition/shared_element_transition</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">true</item>
+    </style>
+
+    <style name="CalcStyle" parent="AppTheme.NoActionBar">
+        <item name="colorPrimary">@color/calcPrimary</item>
+        <item name="colorPrimaryDark">@color/calcDarkPrimary</item>
+        <item name="colorAccent">@color/calcAccent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:navigationBarColor">@color/black</item>
+    </style>
+
+    <style name="KeyStyle">
+        <item name="android:layout_width">0.376in</item>
+        <item name="android:layout_height">0.376in</item>
+        <item name="android:padding">18dp</item>
+        <item name="android:background" tools:ignore="PrivateResource">@color/keyBoardBackground</item>
+        <item name="android:elevation">0dp</item>
+        <item name="android:layout_margin">1dp</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="Param" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/parameterPrimary</item>
+        <item name="colorPrimaryDark">@color/parameterPrimaryDark</item>
+        <item name="colorAccent">@color/parameterAccent</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowSharedElementEnterTransition">@transition/shared_element_transition</item>
+        <item name="android:windowSharedElementExitTransition">@transition/shared_element_transition</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">true</item>
+    </style>
+
+    <style name="ParamStyle" parent="AppTheme.NoActionBar">
+        <item name="colorPrimary">@color/parameterPrimary</item>
+        <item name="colorPrimaryDark">@color/parameterPrimaryDark</item>
+        <item name="colorAccent">@color/parameterAccent</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:navigationBarColor">@color/black</item>
+    </style>
+
+    <style name="ParamToolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">@color/parameterPrimary</item>
+    </style>
+
+    <style name="Chem" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:elevation">4dp</item>
+        <item name="colorPrimary">@color/chemPrimary</item>
+        <item name="colorPrimaryDark">@color/chemDarkPrimary</item>
+        <item name="colorAccent">@color/chemAccent</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:windowSharedElementEnterTransition">@transition/shared_element_transition</item>
+        <item name="android:windowSharedElementExitTransition">@transition/shared_element_transition</item>
+    </style>
+
+    <style name="IT" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:elevation">4dp</item>
+        <item name="colorPrimary">@color/itPrimary</item>
+        <item name="colorPrimaryDark">@color/itDarkPrimary</item>
+        <item name="colorAccent">@color/itAccent</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:windowSharedElementEnterTransition">@transition/shared_element_transition</item>
+        <item name="android:windowSharedElementExitTransition">@transition/shared_element_transition</item>
+    </style>
+
+    <style name="ITStyle" parent="AppTheme.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:navigationBarColor">@color/black</item>
+        <item name="colorPrimary">@color/itPrimary</item>
+        <item name="colorPrimaryDark">@color/itDarkPrimary</item>
+        <item name="colorAccent">@color/itAccent</item>
+    </style>
+
+    <style name="SettingsStyle" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">false</item>
+        <item name="colorPrimary">@color/settingsPrimary</item>
+        <item name="colorPrimaryDark">@color/settingsDarkPrimary</item>
+        <item name="colorAccent">@color/settingsAccent</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:fontFamily">@font/product_sans_bold</item>
+    </style>
+
+</resources>

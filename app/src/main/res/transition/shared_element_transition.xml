@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <targets>
+        <target
+            android:excludeId="@android:id/statusBarBackground"
+            tools:ignore="UnusedAttribute"/>
+        <target
+            android:excludeId="@android:id/navigationBarBackground"
+            tools:ignore="UnusedAttribute"/>
+    </targets>
+
+    <changeBounds/>
+    <changeTransform/>
+    <changeClipBounds/>
+
+</transitionSet>

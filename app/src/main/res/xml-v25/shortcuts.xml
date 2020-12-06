@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <shortcut
+        android:icon="@drawable/phys_shortcut"
+        android:shortcutId="id1"
+        android:shortcutLongLabel="@string/phys_long_label"
+        android:shortcutShortLabel="@string/phys_short_label">
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.abc.qwert.thescience.PhysSelectActivity"
+            android:targetPackage="com.abc.qwert.thescience" />
+
+        <categories android:name="android.shortcut.conversation" />
+
+    </shortcut>
+
+
+    <shortcut
+        android:icon="@drawable/func_calc_shortcut"
+        android:shortcutId="id2"
+        android:shortcutLongLabel="@string/func_calc_long_label"
+        android:shortcutShortLabel="@string/func_calc_short_label">
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.abc.qwert.thescience.FunctionCalculatorActivity"
+            android:targetPackage="com.abc.qwert.thescience" />
+
+        <categories android:name="android.shortcut.conversation" />
+
+    </shortcut>
+
+
+    <shortcut
+        android:icon="@drawable/param_shortcut"
+        android:shortcutId="id4"
+        android:shortcutLongLabel="@string/parameter_long_label"
+        android:shortcutShortLabel="@string/parameter_short_label">
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.abc.qwert.thescience.ParameterActivity"
+            android:targetPackage="com.abc.qwert.thescience" />
+
+        <categories android:name="android.shortcut.conversation" />
+
+    </shortcut>
+
+
+    <shortcut
+        android:icon="@drawable/it_shortcut"
+        android:shortcutId="id3"
+        android:shortcutLongLabel="@string/it_long_label"
+        android:shortcutShortLabel="@string/it_short_label">
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.abc.qwert.thescience.ITActivity"
+            android:targetPackage="com.abc.qwert.thescience" />
+
+        <categories android:name="android.shortcut.conversation" />
+
+    </shortcut>
+
+</shortcuts>

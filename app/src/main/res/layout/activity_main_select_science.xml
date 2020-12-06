@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="0dp"
+        android:fitsSystemWindows="false"
+        android:theme="@style/AppTheme"
+        android:verticalScrollbarPosition="left"
+        tools:context=".MainActivitySelectScience">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/main_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:theme="@style/MainToolbarTheme"
+            app:titleTextColor="@color/white">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="56dp"
+            android:elevation="0dp"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="0dp">
+
+                <!-- Phys -->
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/phys_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginEnd="14dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:transitionName="@string/phys_key"
+                    app:cardBackgroundColor="@color/physPrimary"
+                    android:stateListAnimator="@animator/selector_raise"
+                    app:cardCornerRadius="4dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="14dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/phys_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="7dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:gravity="start"
+                            android:text="@string/phys_ru"
+                            android:textColor="@color/white"
+                            android:textSize="30sp"
+                            android:textStyle="normal|bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="7dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/phys_info"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="145dp"
+                            android:layout_marginTop="7dp"
+                            android:contentDescription="@string/phys_main_image_description"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/phys_main_image" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- FuncCalc -->
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/calc_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginEnd="14dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:transitionName="@string/phys_key"
+                    app:cardBackgroundColor="@color/calcPrimary"
+                    android:stateListAnimator="@animator/selector_raise"
+                    app:cardCornerRadius="4dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="14dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/calc_text"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="7dp"
+                                android:fontFamily="@font/roboto_bold"
+                                android:gravity="start"
+                                android:text="@string/calc_ru"
+                                android:textColor="@color/white"
+                                android:textSize="30sp"
+                                android:layout_weight="1"
+                                android:textStyle="normal|bold" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="7dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/calc_info"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="145dp"
+                            android:layout_marginTop="7dp"
+                            android:contentDescription="@string/calc_main_image_description"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/calc_main_image" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Parameter -->
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/parameter_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginEnd="14dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:transitionName="@string/parameter_key"
+                    app:cardBackgroundColor="@color/parameterPrimary"
+                    android:stateListAnimator="@animator/selector_raise"
+                    app:cardCornerRadius="4dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="14dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/parameter_text"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="7dp"
+                                android:fontFamily="@font/roboto_bold"
+                                android:gravity="start"
+                                android:text="@string/parameter_ru"
+                                android:textColor="@color/white"
+                                android:textSize="30sp"
+                                android:layout_weight="1"
+                                android:textStyle="normal|bold" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="7dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/parameter_info"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="145dp"
+                            android:layout_marginTop="7dp"
+                            android:contentDescription="@string/parameter_main_image_description"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/parameter_main_image" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Chem -->
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/chem_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginEnd="14dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="@color/chemPrimary"
+                    android:stateListAnimator="@animator/selector_raise"
+                    app:cardCornerRadius="4dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="14dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/chem_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="7dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:gravity="start"
+                            android:text="@string/chem_ru"
+                            android:textColor="@color/white"
+                            android:textSize="30sp"
+                            android:textStyle="normal|bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="7dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/chem_info"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="145dp"
+                            android:layout_marginTop="7dp"
+                            android:contentDescription="@string/chem_ps_ru"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/chem_main_image" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- IT -->
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/it_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginBottom="64dp"
+                    android:layout_marginEnd="14dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/itPrimary"
+                    android:stateListAnimator="@animator/selector_raise"
+                    app:cardCornerRadius="4dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="14dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/it_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="7dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:gravity="start"
+                            android:text="@string/it_ru"
+                            android:textColor="@color/white"
+                            android:textSize="30sp"
+                            android:textStyle="normal|bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="7dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/it_info"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="145dp"
+                            android:layout_marginTop="7dp"
+                            android:contentDescription="@string/it_main_image_description"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/it_main_image" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-7919601933189367/8501746362">
+    </com.google.android.gms.ads.AdView>
+
+</RelativeLayout>
+

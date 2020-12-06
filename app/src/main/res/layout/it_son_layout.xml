@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/it_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/itPrimary"
+    android:fitsSystemWindows="true"
+    android:theme="@style/IT"
+    android:transitionName="@string/it_key"
+    tools:context=".ITActivity">
+
+    <View
+        android:id="@+id/blue"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/itBlue"
+        android:elevation="1dp"
+        android:visibility="invisible">
+
+    </View>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar_height"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleMarginEnd="64dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:theme="@style/MainToolbarTheme"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:title="@string/it_ru" />
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/it_nsv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="0dp"
+        android:clipToPadding="false"
+        android:visibility="visible"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <GridLayout
+                android:id="@+id/gridLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="10dp"
+                android:elevation="0dp"
+                android:columnCount="2"
+                android:paddingStart="3dp"
+                android:paddingTop="3dp"
+                android:paddingEnd="0dp"
+                android:paddingBottom="3dp"
+                android:rowCount="6"
+                app:layout_constraintHeight_default="wrap"
+                app:layout_constraintHeight_max="wrap"
+                tools:layout_editor_absoluteX="10dp">
+
+                <!-- bin -->
+                <ImageView
+                    android:id="@+id/binView"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:clickable="true"
+                    android:contentDescription="@string/it_main_image_description"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:src="@drawable/bin_son"
+                    tools:ignore="UnusedAttribute" />
+
+                <EditText
+                    android:id="@+id/bin"
+                    style="@style/Widget.AppCompat.AutoCompleteTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="62dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:backgroundTint="@color/itAccent"
+                    android:digits="@string/bin_digits"
+                    android:elevation="0dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:hint="@string/bin_hint"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/itHintColor"
+                    android:textSize="18sp"
+                    tools:ignore="Autofill" />
+
+
+                <!-- oct -->
+                <ImageView
+                    android:id="@+id/octView"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:clickable="true"
+                    android:contentDescription="@string/it_main_image_description"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:src="@drawable/oct_son"
+                    tools:ignore="UnusedAttribute" />
+
+                <EditText
+                    android:id="@+id/oct"
+                    android:layout_width="match_parent"
+                    android:layout_height="62dp"
+                    android:layout_row="0"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:backgroundTint="@color/itAccent"
+                    android:digits="@string/oct_digits"
+                    android:elevation="0dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:hint="@string/oct_hint"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/itHintColor"
+                    android:textSize="18sp"
+                    tools:ignore="Autofill" />
+
+
+                <!-- dec -->
+                <ImageView
+                    android:id="@+id/decView"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:clickable="true"
+                    android:contentDescription="@string/it_main_image_description"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:src="@drawable/dec_son"
+                    tools:ignore="UnusedAttribute" />
+
+                <EditText
+                    android:id="@+id/dec"
+                    android:layout_width="match_parent"
+                    android:layout_height="62dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:backgroundTint="@color/itAccent"
+                    android:digits="@string/dec_digits"
+                    android:elevation="0dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:hint="@string/dec_hint"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/itHintColor"
+                    android:textSize="18sp"
+                    tools:ignore="Autofill" />
+
+
+                <!-- hex -->
+                <ImageView
+                    android:id="@+id/hexView"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:clickable="true"
+                    android:contentDescription="@string/it_main_image_description"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:src="@drawable/hex_son"
+                    tools:ignore="UnusedAttribute" />
+
+                <EditText
+                    android:id="@+id/hex"
+                    android:layout_width="match_parent"
+                    android:layout_height="62dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:backgroundTint="@color/itAccent"
+                    android:digits="@string/hex_digits"
+                    android:elevation="0dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:hint="@string/hex_hint"
+                    android:imeOptions="actionDone"
+                    android:inputType="textCapCharacters"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/itHintColor"
+                    android:textSize="18sp"
+                    tools:ignore="Autofill" />
+
+
+                <!-- str -->
+                <ImageView
+                    android:id="@+id/strView"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:clickable="true"
+                    android:contentDescription="@string/it_main_image_description"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:src="@drawable/str_son"
+                    tools:ignore="UnusedAttribute" />
+
+                <EditText
+                    android:id="@+id/str"
+                    android:layout_width="match_parent"
+                    android:layout_height="62dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:backgroundTint="@color/itAccent"
+                    android:elevation="0dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:hint="@string/str_hint"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/itHintColor"
+                    android:textSize="18sp"
+                    tools:ignore="Autofill" />
+
+            </GridLayout>
+
+
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                ads:adSize="BANNER"
+                ads:adUnitId="ca-app-pub-7919601933189367/3903029950">
+            </com.google.android.gms.ads.AdView>
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/clr_btn"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="10dp"
+        android:background="@drawable/round_button"
+        android:clickable="true"
+        android:elevation="2dp"
+        android:focusable="true"
+        android:fontFamily="@font/roboto_bold"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:text="@string/it_clr_fields"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        app:layout_anchorGravity="bottom|center" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

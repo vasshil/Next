@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/calcPrimary"
+    android:fitsSystemWindows="true"
+    android:theme="@style/Calc"
+    android:transitionName="@string/calc_key"
+    tools:context=".FunctionCalculatorActivity">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar_height"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:titleEnabled="false"
+            app:expandedTitleMarginBottom="72dp"
+            app:expandedTitleMarginStart="54dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:title="@string/calc_ru"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:theme="@style/MainToolbarTheme" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/calc_nsv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="0dp"
+        app:behavior_overlapTop="60dp"
+        android:background="@color/calcPrimary"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mainCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/cardview_light_background"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="12dp"
+                android:animateLayoutChanges="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:stateListAnimator="@animator/selector_raise_high"
+                tools:ignore="PrivateResource">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingStart="38dp"
+                    android:paddingEnd="5dp"
+                    android:paddingBottom="38dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="@string/calc_title1"
+                        android:textColor="#000000"
+                        android:textSize="18sp"/>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:id="@+id/mainFormulaTouch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp">
+
+                        <com.abc.qwert.thescience.AdvancedMathView
+                            android:id="@+id/inFormula"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            app:engine="KaTeX"
+                            app:text="\\(f(x)= \\square \\)">
+
+                        </com.abc.qwert.thescience.AdvancedMathView>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/reveal_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"
+                        android:src="@drawable/reveal_line"
+                        android:visibility="invisible"
+                        android:layout_marginTop="5dp"
+                        android:contentDescription="@string/calc_right_description" />
+
+                    <TextView
+                        android:id="@+id/error"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:fontFamily="@font/product_sans"
+                        android:gravity="start"
+                        android:text="@string/calc_input_error"
+                        android:textColor="#D50000"
+                        android:textSize="14sp"
+                        android:visibility="invisible" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="@string/calc_title2"
+                        android:textColor="#000000"
+                        android:textSize="18sp"/>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp">
+
+                        <com.abc.qwert.thescience.AdvancedMathView
+                            android:id="@+id/finalFormula"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:engine="KaTeX"
+                            app:text="\\(f'(x)=\\)">
+
+                        </com.abc.qwert.thescience.AdvancedMathView>
+
+                    </LinearLayout>
+
+                    <Switch
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:padding="10dp"
+                        android:text="@string/calc_switch"
+                        android:textColor="#000000"
+                        android:enabled="true"
+                        android:gravity="end|center_vertical"
+                        android:layout_gravity="end|center_vertical"
+                        android:visibility="gone"/>
+
+
+                    <androidx.coordinatorlayout.widget.CoordinatorLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <Button
+                                style="@style/Widget.AppCompat.Button.Colored"
+                                android:id="@+id/graphButton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="15sp"
+                                android:text="@string/calc_graph"/>
+
+
+                            <Button
+                                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                                android:id="@+id/hideGraphButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="15sp"
+                                android:text="@string/calc_hide_button"/>
+
+
+                        </LinearLayout>
+
+                        <com.jjoe64.graphview.GraphView
+                            android:id="@+id/graph"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:layout_margin="5dp"
+                            android:layout_gravity="end"
+                            android:visibility="gone"/>
+
+                    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="121dp">
+
+                <com.google.android.gms.ads.AdView
+                    android:id="@+id/adView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    ads:adSize="BANNER"
+                    ads:adUnitId="ca-app-pub-7919601933189367/8528670677">
+                </com.google.android.gms.ads.AdView>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/keyboardBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:layout_gravity="center_horizontal"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="82dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/cardview_light_background"
+            tools:ignore="PrivateResource">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:id="@+id/bottom_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/positionLeftButton"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_arrow_back_white_24dp"
+                    android:layout_weight="0"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/diff_button_bg"
+                    android:elevation="6dp"
+                    android:layout_gravity="center_vertical"
+                    android:stateListAnimator="@animator/selector_raise_high"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="@string/calc_left_description" />
+
+                <Button
+                    android:id="@+id/differentiateButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/diff_button_bg"
+                    android:clickable="true"
+                    android:elevation="4dp"
+                    android:focusable="true"
+                    android:fontFamily="@font/product_sans"
+                    android:text="@string/calc_diff_button"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF" />
+
+                <ImageButton
+                    android:id="@+id/positionRightButton"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_arrow_forward_white_24dp"
+                    android:layout_weight="0"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/diff_button_bg"
+                    android:elevation="6dp"
+                    android:layout_gravity="center_vertical"
+                    android:stateListAnimator="@animator/selector_raise_high"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="@string/calc_right_description" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/keyboard_func"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="73dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            app:cardElevation="6dp"
+            android:layout_gravity="center_horizontal|bottom"
+            app:cardCornerRadius="0dp">
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:rowCount="6"
+                android:columnCount="4"
+                android:padding="1dp"
+                android:background="@color/keyBoardBackground"
+                tools:ignore="PrivateResource">
+
+                <ImageView android:id="@+id/key_pi"               style="@style/KeyStyle" android:src="@drawable/image_key_pi" />
+                <ImageView android:id="@+id/key_alpha"            style="@style/KeyStyle" android:src="@drawable/image_key_alpha"/>
+                <ImageView android:id="@+id/key_beta"             style="@style/KeyStyle" android:src="@drawable/image_key_beta"/>
+                <ImageView android:id="@+id/key_backspace2"       style="@style/KeyStyle" android:src="@drawable/image_key_backspace"/>
+                <ImageView android:id="@+id/key_e"                style="@style/KeyStyle" android:src="@drawable/image_key_e"/>
+                <ImageView android:id="@+id/key_pow"              style="@style/KeyStyle" android:src="@drawable/image_key_pow"/>
+                <ImageView android:id="@+id/key_nroot"            style="@style/KeyStyle" android:src="@drawable/image_key_nroot"/>
+                <ImageView android:id="@+id/key_clear2"           style="@style/KeyStyle" android:src="@drawable/image_key_clear"/>
+                <ImageView android:id="@+id/key_ln"               style="@style/KeyStyle" android:src="@drawable/image_key_ln"/>
+                <ImageView android:id="@+id/key_sin"              style="@style/KeyStyle" android:src="@drawable/image_key_sin"/>
+                <ImageView android:id="@+id/key_asin"             style="@style/KeyStyle" android:src="@drawable/image_key_asin"/>
+                <ImageView android:id="@+id/key_divide2"          style="@style/KeyStyle" android:src="@drawable/image_key_divide"/>
+                <ImageView android:id="@+id/key_lg"               style="@style/KeyStyle" android:src="@drawable/image_key_lg"/>
+                <ImageView android:id="@+id/key_cos"              style="@style/KeyStyle" android:src="@drawable/image_key_cos"/>
+                <ImageView android:id="@+id/key_acos"             style="@style/KeyStyle" android:src="@drawable/image_key_acos"/>
+                <ImageView android:id="@+id/key_times2"           style="@style/KeyStyle" android:src="@drawable/image_key_times"/>
+                <ImageView android:id="@+id/key_log"              style="@style/KeyStyle" android:src="@drawable/image_key_log"/>
+                <ImageView android:id="@+id/key_tg"               style="@style/KeyStyle" android:src="@drawable/image_key_tg"/>
+                <ImageView android:id="@+id/key_atg"              style="@style/KeyStyle" android:src="@drawable/image_key_atg"/>
+                <ImageView android:id="@+id/key_minus2"           style="@style/KeyStyle" android:src="@drawable/image_key_minus"/>
+                <ImageView android:id="@+id/key_change_keyboard2" style="@style/KeyStyle" android:src="@drawable/image_key_change_keyboard"/>
+                <ImageView android:id="@+id/key_ctg"              style="@style/KeyStyle" android:src="@drawable/image_key_ctg"/>
+                <ImageView android:id="@+id/key_actg"             style="@style/KeyStyle" android:src="@drawable/image_key_actg"/>
+                <ImageView android:id="@+id/key_plus2"            style="@style/KeyStyle" android:src="@drawable/image_key_plus"/>
+
+            </GridLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/keyboard_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardElevation="6dp"
+            android:layout_gravity="center_horizontal|bottom"
+            app:cardCornerRadius="0dp">
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:rowCount="6"
+                android:columnCount="4"
+                android:padding="1dp"
+                android:background="@color/keyBoardBackground"
+                tools:ignore="PrivateResource">
+
+                <ImageView android:id="@+id/key_x"               style="@style/KeyStyle" android:src="@drawable/image_key_x"/>
+                <ImageView android:id="@+id/key_left"            style="@style/KeyStyle" android:src="@drawable/image_key_left"/>
+                <ImageView android:id="@+id/key_right"           style="@style/KeyStyle" android:src="@drawable/image_key_right"/>
+                <ImageView
+                    android:id="@+id/key_backspace"
+                    style="@style/KeyStyle"
+                    android:layout_width="51dp"
+                    android:src="@drawable/image_key_backspace" />
+                <ImageView android:id="@+id/key_frac"            style="@style/KeyStyle" android:src="@drawable/image_key_frac"/>
+                <ImageView android:id="@+id/key_sqr"             style="@style/KeyStyle" android:src="@drawable/image_key_sqr"/>
+                <ImageView android:id="@+id/key_sqrt"            style="@style/KeyStyle" android:src="@drawable/image_key_sqrt"/>
+                <ImageView android:id="@+id/key_clear"           style="@style/KeyStyle" android:src="@drawable/image_key_clear"/>
+                <ImageView android:id="@+id/key_7"               style="@style/KeyStyle" android:src="@drawable/image_key_7"/>
+                <ImageView android:id="@+id/key_8"               style="@style/KeyStyle" android:src="@drawable/image_key_8"/>
+                <ImageView android:id="@+id/key_9"               style="@style/KeyStyle" android:src="@drawable/image_key_9"/>
+                <ImageView android:id="@+id/key_divide"          style="@style/KeyStyle" android:src="@drawable/image_key_divide"/>
+                <ImageView android:id="@+id/key_4"               style="@style/KeyStyle" android:src="@drawable/image_key_4"/>
+                <ImageView android:id="@+id/key_5"               style="@style/KeyStyle" android:src="@drawable/image_key_5"/>
+                <ImageView android:id="@+id/key_6"               style="@style/KeyStyle" android:src="@drawable/image_key_6"/>
+                <ImageView android:id="@+id/key_times"           style="@style/KeyStyle" android:src="@drawable/image_key_times"/>
+                <ImageView android:id="@+id/key_1"               style="@style/KeyStyle" android:src="@drawable/image_key_1"/>
+                <ImageView android:id="@+id/key_2"               style="@style/KeyStyle" android:src="@drawable/image_key_2"/>
+                <ImageView android:id="@+id/key_3"               style="@style/KeyStyle" android:src="@drawable/image_key_3"/>
+                <ImageView android:id="@+id/key_minus"           style="@style/KeyStyle" android:src="@drawable/image_key_minus"/>
+                <ImageView android:id="@+id/key_change_keyboard" style="@style/KeyStyle" android:src="@drawable/image_key_change_keyboard"/>
+                <ImageView android:id="@+id/key_0"               style="@style/KeyStyle" android:src="@drawable/image_key_0"/>
+                <ImageView android:id="@+id/key_point"           style="@style/KeyStyle" android:src="@drawable/image_key_point"/>
+                <ImageView android:id="@+id/key_plus"            style="@style/KeyStyle" android:src="@drawable/image_key_plus"/>
+
+            </GridLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

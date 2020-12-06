@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:yourapp="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_settings_it"
+        android:orderInCategory="100"
+        android:title="@string/action_settings_ru"
+        yourapp:showAsAction="never">
+    </item>
+
+    <item
+        android:id="@+id/action_apply"
+        android:icon="@drawable/ic_check_white_24dp"
+        android:title="@string/it_apply_hint"
+        yourapp:actionViewClass="androidx.appcompat.widget.ButtonBarLayout"
+        yourapp:showAsAction="always" />
+</menu>
