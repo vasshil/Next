@@ -4,9 +4,9 @@ apply plugin: 'com.google.gms.google-services'
 android {
     signingConfigs {
         config {
-            storePassword 'uzulim4040'
+            storePassword ''
             keyAlias = 'TheScienceKey'
-            keyPassword 'uzulim4040'
+            keyPassword ''
         }
     }
     compileSdkVersion 29
